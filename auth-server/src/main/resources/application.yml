@@ -1,0 +1,37 @@
+server:
+  port: 8001
+
+# Eureka Server 配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+spring:
+  application:
+    name: oauth
+  datasource:
+    url: jdbc:mysql://localhost:3306/oauth?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 10
+      #设置超时
+      idle-timeout: 600000
+      #连接超时
+      connection-timeout: 30000
+      #每个连接可以存活时间
+      max-lifetime: 1800000
+logging:
+  level:
+    root: info
+
+encrypt:
+  key-store:
+    location: classpath:/projectkey.jks
+    secret: projectpassword
+    alias: projectkey
+    password: projectpassword
