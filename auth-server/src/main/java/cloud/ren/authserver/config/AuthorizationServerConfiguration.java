@@ -79,6 +79,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .and()
                 .withClient("client_3")
                 .scopes("read")
+                .redirectUris("http://baidu.com")
                 .secret(new BCryptPasswordEncoder().encode("secret"))
                 .authorizedGrantTypes("authorization_code", "refresh_token")
 
@@ -86,6 +87,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .and()
                 .withClient("client_4")
                 .scopes("read")
+                .redirectUris("http://baidu.com")
                 .secret(new BCryptPasswordEncoder().encode("secret"))
                 .authorizedGrantTypes("implicit");
 
